@@ -20,23 +20,27 @@ body {
 .grid-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-column-gap: 1px;
-    grid-row-gap: 1px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
     margin: 1em;
     background-color: white;
 }
 
 .grid-item {
-    background-color: aquamarine;
+    background-color: white;
     display: grid;
     justify-content: center;
+    border: 2px solid grey;
+    border-radius: 10px;
     padding: 20px;
     font-size: 20px;
-    color: white;
+    color: black;
     line-height: 1;
-    border-radius: 5px
-
 }
+
+    .grid-item:hover {
+        box-shadow: 0px 0px 30px 5px grey;
+    }
 
 .item-img {
     width: 100%;
@@ -44,3 +48,23 @@ body {
     object-fit: contain;
     mix-blend-mode: multiply;
 }
+
+.item-title {
+    text-align: center;
+    margin-top: 3px;
+}
+
+.basket-button {
+    margin-top: 10px;
+    border-color: lightgreen;
+    border-radius: 10px;
+    padding: 8px 8px 8px 8px;
+    color: black;
+    box-shadow: 0 0 40px 40px lightgreen inset, 0 0 0 0 lightgreen;
+    transition: all 150ms ease-in-out;
+}
+
+    .basket-button:hover {
+        box-shadow: 0 0 10px 0 lightgreen inset, 0 0 10px 4px lightgreen;
+        font-size: larger;
+    }

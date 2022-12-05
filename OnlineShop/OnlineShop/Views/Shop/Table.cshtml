@@ -13,6 +13,10 @@
                 }
 
                 <img src="@imgSrc" class="item-img"/>
+                <span class="item-title">@item.Title</span>
+                <hr>
+                <b>Цена: @string.Format("{0:f2}", @item.Price)</b>
+                <button type="button" class="basket-button" value="@item.Id" asp-action="defaultBasketPut">Добавить в корзину</button>
             </div>
         }
     }
