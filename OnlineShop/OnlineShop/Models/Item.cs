@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineShop.Models
 {
-    //[Table("Item")]
+    [Table("Item")]
     public class Item
     {
         public long Id { get; set; }
@@ -11,19 +11,22 @@ namespace OnlineShop.Models
         [Required]
         public string Title { get; set; }
 
-        //[Required]
-        //[Column("Item_code")]
-        //public Item_code ItemCode { get; set; }
+        [Required]
+        [Column("Item_Code")]
+        public long ItemСode { get; set; }
 
-        //[Required]
-        //[Column("ID_Manufacturer")]
-        //public Manufacturer Manufacturer { get; set; }
+       // public virtual Item_code Item_Code { get; set; }
+
+        [Required]
+        public long ID_Manufacturer { get; set; }
+
+       // public Manufacturer Manufacturer { get; set; }
 
         public byte[] Image { get; set; }
         public string Description { get; set; }
 
         [Required]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         [Required]
         public decimal Price { get; set; }

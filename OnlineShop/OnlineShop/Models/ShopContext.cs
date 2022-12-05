@@ -11,6 +11,6 @@ namespace OnlineShop.Models
             Database.EnsureCreated();
         }
 
-        public DbSet<Item> Items;
+        public DbSet<Item> Items { get; set; }
     }
 }

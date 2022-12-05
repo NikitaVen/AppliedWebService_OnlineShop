@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace OnlineShop.Models
 {
-    //[Table("Manufacturer")]
+    [Table("Manufacturer")]
     public class Manufacturer
     {
         public long Id { get; set; }

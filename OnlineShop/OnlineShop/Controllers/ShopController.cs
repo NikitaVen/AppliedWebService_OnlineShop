@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Models;
+using System.Drawing.Imaging;
+
 namespace OnlineShop.Controllers
 {
     public class ShopController : Controller
@@ -14,7 +16,7 @@ namespace OnlineShop.Controllers
         [HttpGet]
         public IActionResult Table()
         {
-            return View(context.Items as ICollection<Item>);
+            return View(context.Items.ToList<Item>());
         }
     }
 }

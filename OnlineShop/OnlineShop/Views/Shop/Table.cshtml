@@ -1,11 +1,16 @@
-﻿@model ICollection<Item>
+﻿@model List<Item>
+
 
     <div class="grid-wrapper">
     @{
         foreach(Item item in @Model)
         {
+
+            using (var ms = new MemoryStream(@item.Image))
+            {
+            }
             <div class="grid-item">
-            @item.Title
+            <img src= (></img>
             </div>
         }
     }
