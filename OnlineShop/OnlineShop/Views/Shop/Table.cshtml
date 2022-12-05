@@ -1,17 +1,19 @@
-﻿@model List<Item>
+﻿@using System.Drawing
+@model List<Item>
 
 
-    <div class="grid-wrapper">
+<div class="grid-wrapper">
     @{
-        foreach(Item item in @Model)
+        foreach (Item item in Model)
         {
-
-            using (var ms = new MemoryStream(@item.Image))
-            {
-            }
             <div class="grid-item">
-            <img src= (></img>
+                @{
+                    var base64 = Convert.ToBase64String(item.Image);
+                    var imgSrc = $"data:image/gif;base64,{base64}";
+                }
+
+                <img src="@imgSrc" width="100" height="100"/>
             </div>
         }
     }
-    </div>
+</div>
