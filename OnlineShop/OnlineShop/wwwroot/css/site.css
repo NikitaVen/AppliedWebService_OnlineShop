@@ -16,3 +16,24 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    margin: 1em;
+    background-color: white;
+}
+
+.grid-item {
+    background-color: aquamarine;
+    display: grid;
+    justify-content: center;
+    padding: 20px;
+    font-size: 70px;
+    color: white;
+    line-height: 1;
+    border-radius: 5px
+
+}

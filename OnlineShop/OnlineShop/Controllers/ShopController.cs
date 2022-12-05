@@ -4,12 +4,17 @@ namespace OnlineShop.Controllers
 {
     public class ShopController : Controller
     {
-        ShopContext context = new ShopContext();
+        ShopContext context;
+
+        public ShopController(ShopContext context)
+        {
+            this.context = context;
+        }
 
         [HttpGet]
         public IActionResult Table()
         {
-            return View(context.Items);
+            return View(context.Items as ICollection<Item>);
         }
     }
 }
