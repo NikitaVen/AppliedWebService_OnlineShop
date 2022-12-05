@@ -20,6 +20,7 @@ namespace OnlineShop.Models
                 .WithMany()
                 .HasForeignKey(i => i.ID_Manufacturer)
                 .IsRequired();
+
             modelBuilder.Entity<Item>()
                 .Navigation(i => i.Manufacturer)
                 .UsePropertyAccessMode(PropertyAccessMode.Property)
@@ -28,13 +29,14 @@ namespace OnlineShop.Models
             modelBuilder.Entity<Item>()
                 .HasOne(a => a.Item_Code)
                 .WithMany()
-                .HasForeignKey(i=>i.ItemCode);
-            
+                .HasForeignKey(i=>i.ItemCode)
+                .IsRequired();
+
             modelBuilder.Entity<Item>()
                 .Navigation(i => i.Item_Code)
                 .UsePropertyAccessMode(PropertyAccessMode.Property)
-                .AutoInclude()
-                .IsRequired();;
+                .AutoInclude();
+
             base.OnModelCreating(modelBuilder);
         }
 

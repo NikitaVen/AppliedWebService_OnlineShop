@@ -21,9 +21,9 @@ namespace OnlineShop.Controllers
             return View(context.Items.ToList<Item>());
         }
 
-        public void defaultBasketPut(string itemId)
+        public IActionResult defaultBasketPut(string button)
         {
-            Item chosenItem = context.Items.First(i => i.Id == Int64.Parse(itemId));
+            Item chosenItem = context.Items.First(i => i.Id == Int64.Parse(button));
             if (chosenItem.Amount > 0)
             {
                 int amount;
@@ -34,6 +34,8 @@ namespace OnlineShop.Controllers
                 else
                     basket.items.Add(chosenItem, 1);
             }
+
+            return RedirectToAction("Table");
         }
     }
 }
