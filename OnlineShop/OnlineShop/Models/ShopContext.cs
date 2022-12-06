@@ -36,6 +36,26 @@ namespace OnlineShop.Models
                 .Navigation(i => i.Item_Code)
                 .UsePropertyAccessMode(PropertyAccessMode.Property)
                 .AutoInclude();
+            
+            modelBuilder.Entity<OrderItem>().HasKey(oi => new { oi.IdOrder, oi.IdItem });
+
+            modelBuilder.Entity<OrderItem>()
+                .HasOne<Item>(sc => sc.Item)
+                .WithMany()
+                .HasForeignKey(oi => oi.IdItem);
+            
+            modelBuilder.Entity<OrderItem>().Navigation(oi => oi.Item)
+                .UsePropertyAccessMode(PropertyAccessMode.Property).AutoInclude();
+            modelBuilder.Entity<OrderItem>().Navigation(oi => oi.Order)
+                .UsePropertyAccessMode(PropertyAccessMode.Property).AutoInclude();
+            
+            modelBuilder.Entity<Order>().Navigation(o => o.OrderItems)
+                .UsePropertyAccessMode(PropertyAccessMode.Property).AutoInclude();
+
+            modelBuilder.Entity<OrderItem>()
+                .HasOne<Order>(oi => oi.Order)
+                .WithMany(o => o.OrderItems)
+                .HasForeignKey(oi => oi.IdOrder);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -43,5 +63,7 @@ namespace OnlineShop.Models
         public DbSet<Item> Items { get; set; }
         public DbSet<Item_code> ItemCodes { get; set; }
         public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
     }
 }
