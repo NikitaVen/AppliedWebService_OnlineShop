@@ -21,9 +21,9 @@
                     </div>
                 </div>
                 <div class="qty mt-5">
-                    <span class="minus bg-dark">-</span>
+                    <button asp-action="CartDecrement" name="dec" value="@item.Id" class="minus bg-dark">-</button>
                     <input type="number" class="count" name="qty" value="@Model.items[@item]">
-                    <span class="plus bg-dark">+</span>
+                    <button asp-action="CartIncrement" name="inc" value="@item.Id" class="plus bg-dark">+</button>
                 </div>
                 <b>Цена: @string.Format("{0:f2}", @item.Price)</b>
                 <button name="button" class="delete-button" value="@item.Id" asp-action="CartDelete">Удалить</button>

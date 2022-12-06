@@ -100,5 +100,39 @@ namespace OnlineShop.Controllers
             HttpContext.Response.Cookies.Append("Cart", JsonSerializer.Serialize<Basket>(basket));
             return RedirectToAction("Cart");
         }
+
+        public IActionResult CartDecrement(string dec)
+        {
+            string value;
+            HttpContext.Request.Cookies.TryGetValue("Cart", out value);
+
+            Basket basket;
+            if (value == null)
+                basket = new Basket();
+            else
+                basket = JsonSerializer.Deserialize<Basket>(value);
+            if (basket.items[Int64.Parse(dec)] > 1)
+                basket.items[Int64.Parse(dec)] -= 1;
+
+            HttpContext.Response.Cookies.Append("Cart", JsonSerializer.Serialize<Basket>(basket));
+            return RedirectToAction("Cart");
+        }
+
+        public IActionResult CartIncrement(string inc)
+        {
+            string value;
+            HttpContext.Request.Cookies.TryGetValue("Cart", out value);
+
+            Basket basket;
+            if (value == null)
+                basket = new Basket();
+            else
+                basket = JsonSerializer.Deserialize<Basket>(value);
+            if (basket.items[Int64.Parse(inc)] < context.Items.First(i => i.Id == Int64.Parse(inc)).Amount)
+                basket.items[Int64.Parse(inc)] += 1;
+
+            HttpContext.Response.Cookies.Append("Cart", JsonSerializer.Serialize<Basket>(basket));
+            return RedirectToAction("Cart");
+        }
     }
 }
