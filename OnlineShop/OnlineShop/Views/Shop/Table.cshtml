@@ -7,7 +7,7 @@
     @{
         foreach (Item item in Model)
         {
-            <div class="grid-item">
+            <div class="grid-item" onclick="">
                 @{
                     var base64 = Convert.ToBase64String(item.Image);
                     var imgSrc = $"data:image/gif;base64,{base64}";

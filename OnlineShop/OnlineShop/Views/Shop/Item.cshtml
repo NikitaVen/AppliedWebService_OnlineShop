@@ -1,0 +1,31 @@
+﻿@model Item
+
+<main class="container">
+ 
+  <!-- Left Column / Headphones Image -->
+  <div class="left-column">
+    @{
+        var base64 = Convert.ToBase64String(@Model.Image);
+        var imgSrc = $"data:image/gif;base64,{base64}";
+     }
+     <img src="@imgSrc" class="item-img-main"/>
+  </div>
+ 
+ 
+  <!-- Right Column -->
+  <div class="right-column">
+ 
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>@Model.Item_Code.Title</span>
+      <h1>@Model.Manufacturer.Title @Model.Title</h1>
+      <p>@Model.Description</p>
+    </div>
+ 
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span>Цена: @string.Format("{0:f2}", @Model.Price)</span>
+
+    </div>
+  </div>
+</main>

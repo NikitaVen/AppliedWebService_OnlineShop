@@ -2,11 +2,11 @@
 {
     public class Basket
     {
-        public Dictionary<Item, int> items { get; set; }
+        public Dictionary<long, int> items { get; set; }
 
         public Basket()
         {
-            items = new Dictionary<Item, int>();
+            items = new Dictionary<long, int>();
         }
     }
 }
