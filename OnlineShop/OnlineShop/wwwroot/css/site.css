@@ -134,8 +134,27 @@ body {
     }
 
     .product-description p {
-        font-size: 16px;
+        font-size: 22px;
         font-weight: 300;
         color: #86939E;
         line-height: 24px;
     }
+
+
+.left-column-cart {
+    width: 30%;
+    position: relative;
+}
+
+.grid-item-cart {
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    font-size: 20px;
+    color: black;
+    line-height: 1;
+}

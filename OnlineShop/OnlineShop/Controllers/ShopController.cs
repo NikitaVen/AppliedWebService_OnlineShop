@@ -26,7 +26,7 @@ namespace OnlineShop.Controllers
             return View(context.Items.ToList<Item>());
         }
 
-        public IActionResult defaultBasketPut(string button)
+        public IActionResult CartAdd(string button)
         {
             string value;
             HttpContext.Request.Cookies.TryGetValue("Cart", out value);
@@ -56,9 +56,32 @@ namespace OnlineShop.Controllers
                 basket.items.Add(chosenItem.Id, 1);
         }
 
-        public IActionResult Item(int itemId)
+        [HttpGet]
+        public IActionResult Item(long itemId)
         {
             return View(context.Items.First(i=>i.Id == itemId));
+        }
+
+        [HttpGet]
+        public IActionResult Cart()
+        {
+            string value;
+            Basket basket;
+            HttpContext.Request.Cookies.TryGetValue("Cart", out value);
+            if (value == null)
+                basket = new Basket();
+            else
+                basket = JsonSerializer.Deserialize<Basket>(value);
+
+            Cart cart = new Cart();
+
+            foreach(var id in basket.items.Keys)
+            {
+                Item item = context.Items.First(i => i.Id == id);
+                cart.items.Add(item, basket.items[id]);
+            }
+
+            return View(cart);
         }
     }
 }
