@@ -19,7 +19,7 @@
                     <span class="item-type">@item.Item_Code.Title</span>
                     <hr>
                     <b>Цена: @string.Format("{0:f2}", @item.Price)</b>
-                    <a asp-controller="Shop" asp-action="Item" asp-route-itemId="@item.Id">Подробнее</a>
+                    <a asp-controller="Shop" asp-action="Item" asp-route-itemId="@item.Id" class="more-info">Подробнее</a>
                     <button  name="button" class="basket-button" value="@item.Id" asp-action="defaultBasketPut">Добавить в корзину</button>
                 </div>
             }

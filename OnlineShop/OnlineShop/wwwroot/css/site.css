@@ -99,6 +99,20 @@ body {
     mix-blend-mode: multiply;
 }
 
+.more-info{
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+    color: rgba(1,19,26,0.75);
+    text-align: left;
+    font-size: 0.87em;
+}
+
+.more-info:hover{
+    text-decoration: underline;
+    color: rgba(35,169,33,0.6);
+}
+
 .product-description {
     border-bottom: 1px solid #E1E8EE;
     margin-bottom: 20px;

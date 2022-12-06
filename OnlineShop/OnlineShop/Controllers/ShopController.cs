@@ -58,8 +58,6 @@ namespace OnlineShop.Controllers
 
         public IActionResult Item(int itemId)
         {
-            Console.WriteLine(itemId);
-            Console.WriteLine($"{itemId} ========================= {context.Items.First(i=>i.Id == itemId).Id}");
             return View(context.Items.First(i=>i.Id == itemId));
         }
     }
