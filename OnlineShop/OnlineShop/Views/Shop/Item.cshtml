@@ -1,5 +1,6 @@
 ﻿@model Item
 
+<form>
 <main class="container">
  
   <!-- Left Column / Headphones Image -->
@@ -25,7 +26,8 @@
     <!-- Product Pricing -->
     <div class="product-price">
       <span>Цена: @string.Format("{0:f2}", @Model.Price)</span>
-
     </div>
+     <button  name="button" class="basket-button" value="@Model.Id" asp-action="CartAdd">Добавить в корзину</button>
   </div>
 </main>
+</form>
