@@ -43,12 +43,6 @@ namespace OnlineShop.Controllers
             return RedirectToAction("Table");
         }
 
-        [HttpGet]
-        public IActionResult Item(Item item)
-        {
-            return View(item);
-          //  return View(context.Items.First(i => i.Id==3));
-        }
         private void BasketAction(Basket basket, string button)
         {
             Item chosenItem = context.Items.First(i => i.Id == Int64.Parse(button));
@@ -60,6 +54,13 @@ namespace OnlineShop.Controllers
             }
             else
                 basket.items.Add(chosenItem.Id, 1);
+        }
+
+        public IActionResult Item(int itemId)
+        {
+            Console.WriteLine(itemId);
+            Console.WriteLine($"{itemId} ========================= {context.Items.First(i=>i.Id == itemId).Id}");
+            return View(context.Items.First(i=>i.Id == itemId));
         }
     }
 }
