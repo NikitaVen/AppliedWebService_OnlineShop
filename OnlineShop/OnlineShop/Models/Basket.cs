@@ -6,7 +6,7 @@
 
         public Basket()
         {
-            items = new Dictionary<Item, int>(); 
+            items = new Dictionary<Item, int>();
         }
     }
 }

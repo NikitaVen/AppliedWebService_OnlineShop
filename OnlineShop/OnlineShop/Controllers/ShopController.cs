@@ -9,10 +9,10 @@ namespace OnlineShop.Controllers
         ShopContext context;
         Basket basket;
 
-        public ShopController(ShopContext context)
+        public ShopController(ShopContext context, Basket basket)
         {
             this.context = context;
-            this.basket = new Basket();
+            this.basket = basket;
         }
 
         [HttpGet]
@@ -21,6 +21,7 @@ namespace OnlineShop.Controllers
             return View(context.Items.ToList<Item>());
         }
 
+        // привязать не к айтему, а к его id
         public IActionResult defaultBasketPut(string button)
         {
             Item chosenItem = context.Items.First(i => i.Id == Int64.Parse(button));
