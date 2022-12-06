@@ -1,6 +1,9 @@
 ﻿@model Item
 
 <form>
+@{
+    ViewData["Title"] = $"{Model.Manufacturer.Title} {Model.Title}";
+}
 <main class="container">
  
   <!-- Left Column / Headphones Image -->
