@@ -17,6 +17,10 @@ body {
   margin-bottom: 60px;
 }
 
+.footer{
+    height: 60px;
+}
+
 .grid-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -75,7 +79,6 @@ body {
 }
 
 .container {
-    margin-top: 70px;
     max-width: 1200px;
     padding: 15px;
     display: flex;
