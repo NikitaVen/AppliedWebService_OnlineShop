@@ -134,5 +134,46 @@ namespace OnlineShop.Controllers
             HttpContext.Response.Cookies.Append("Cart", JsonSerializer.Serialize<Basket>(basket));
             return RedirectToAction("Cart");
         }
+        
+        [HttpPost]
+        public IActionResult GoToOrderCreation()
+        {
+            return RedirectToAction("Order"); 
+        }
+
+        [HttpGet]
+        public IActionResult Order()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateOrder(Order order)
+        {
+            string value;
+            HttpContext.Request.Cookies.TryGetValue("Cart", out value);
+            Basket basket;
+            if (value == null)
+            {
+                return RedirectToAction("Cart");   
+            }
+
+            basket = JsonSerializer.Deserialize<Basket>(value);
+            
+            Console.WriteLine(order.Id);
+            order.OrderItems = new List<OrderItem>();
+            foreach(KeyValuePair<long, int> entry in basket.items)
+            {
+                OrderItem oi = new OrderItem();
+                oi.Item = context.Items.First(i => i.Id == entry.Key);
+                oi.Order = order;
+                oi.Amount = entry.Value;
+                order.OrderItems.Add(oi);
+            }
+            order.Order_date = DateTime.Now;
+            context.Orders.Add(order);
+            await context.SaveChangesAsync();
+            return RedirectToAction("Table");
+        }
     }
 }
