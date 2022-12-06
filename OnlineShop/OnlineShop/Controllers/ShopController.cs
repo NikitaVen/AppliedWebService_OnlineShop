@@ -83,5 +83,22 @@ namespace OnlineShop.Controllers
 
             return View(cart);
         }
+
+        public IActionResult CartDelete(string button)
+        {
+            string value;
+            HttpContext.Request.Cookies.TryGetValue("Cart", out value);
+
+            Basket basket;
+            if (value == null)
+                basket = new Basket();
+            else
+                basket = JsonSerializer.Deserialize<Basket>(value);
+
+            basket.items.Remove(Int64.Parse(button));
+
+            HttpContext.Response.Cookies.Append("Cart", JsonSerializer.Serialize<Basket>(basket));
+            return RedirectToAction("Cart");
+        }
     }
 }

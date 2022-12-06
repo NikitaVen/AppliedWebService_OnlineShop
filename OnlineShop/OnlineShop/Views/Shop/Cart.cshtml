@@ -1,23 +1,31 @@
 ﻿@model Cart
 
 <form class="left-column-cart">
-@{
-    foreach(var item in @Model.items.Keys)
-    {
-                        <div style="display: flex;">
-                        <div class="grid-item-cart">
-                                    @{
+    @{
+        decimal total_price = 0;
+        foreach(var item in @Model.items.Keys)
+        {
+            total_price += item.Price * @Model.items[item];
+                    <div style="display: flex; align-items: center;">
+                                <div class="grid-item-cart">
+                                            @{
                         var base64 = Convert.ToBase64String(item.Image);
                         var imgSrc = $"data:image/gif;base64,{base64}";
-                                    }
+                                            }
 
-                                    <img src="@imgSrc" class="item-img"/>
-                                    <span class="item-title">@item.Manufacturer.Title @item.Title</span>
-                                    <hr>
-                                    <span class="item-type">@item.Item_Code.Title</span>
-                        </div>
-                            <input style="height: fit-content;" type="number" value=@Model.items[@item] name="points" step="1">
-                        </div>
+                                            <img src="@imgSrc" class="item-img"/>
+                                            <span class="item-title">@item.Manufacturer.Title @item.Title</span>
+                                            <hr>
+                                            <span class="item-type">@item.Item_Code.Title</span>
+                                            <div class="product-price">
+                                    </div>
+                                </div>
+                                    <input class="cart-amount" type="number" value=@Model.items[@item] min="1" max="@item.Amount" name="points" step="1">
+                                    <b>Цена: @string.Format("{0:f2}", @item.Price)</b>
+                                     <button  name="button" class="delete-button" value="@item.Id" asp-action="CartDelete">Удалить</button>
+                                </div>
     }
+            <h2>Итого: @string.Format("{0:f2}", @total_price)</h2>
+
 }
 </form>
