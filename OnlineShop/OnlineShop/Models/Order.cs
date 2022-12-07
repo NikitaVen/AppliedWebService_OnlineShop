@@ -9,11 +9,15 @@ public class Order
 {
     public long Id { get; set; }
     public DateTime Order_date { get; set; }
-    [EmailAddress]
+
+    [EmailAddress(ErrorMessage = "Неверный формат Email")]
+    [Required(ErrorMessage = "Поле Email обязательно")]
     public string Email { get; set; }
+
+   [Required(ErrorMessage = "Поле Address обязательно")]
     public string Address { get; set; }
     
     [Column("Total_Price")]
     public decimal TotalPrice { get; set; }
-    public ICollection<OrderItem> OrderItems { get; set; }
+    public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 }

@@ -52,7 +52,7 @@ namespace OnlineShop.Controllers
                 if (amount < chosenItem.Amount)
                     basket.items[chosenItem.Id] = amount + 1;
             }
-            else
+            else if (chosenItem.Amount > 0)
                 basket.items.Add(chosenItem.Id, 1);
         }
 
@@ -142,8 +142,13 @@ namespace OnlineShop.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateOrder(Order order)
+        public async Task<IActionResult> Order(Order order)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             string value;
             HttpContext.Request.Cookies.TryGetValue("Cart", out value);
             Basket basket;
@@ -154,7 +159,6 @@ namespace OnlineShop.Controllers
 
             basket = JsonSerializer.Deserialize<Basket>(value);
 
-            Console.WriteLine(order.Id);
             order.OrderItems = new List<OrderItem>();
             decimal totalPrice = 0;
             foreach (KeyValuePair<long, int> entry in basket.items)
