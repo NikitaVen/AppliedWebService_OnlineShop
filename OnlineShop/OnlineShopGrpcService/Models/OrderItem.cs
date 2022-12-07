@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OnlineShop.Models;
+namespace OnlineShopGrpcService.Models;
 [Table("Ord_Item")]
 public class OrderItem
 {

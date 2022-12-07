@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "OnlineShopGrpcService";
+
+package onlineShop;
+
+service OnlineShop {
+  
+}

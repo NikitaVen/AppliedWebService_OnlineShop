@@ -1,0 +1,6 @@
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShopGrpcService\obj\Debug\net6.0\OnlineShopGrpcService.csproj.AssemblyReference.cache
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShopGrpcService\obj\Debug\net6.0\OnlineShopGrpcService.GeneratedMSBuildEditorConfig.editorconfig
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShopGrpcService\obj\Debug\net6.0\OnlineShopGrpcService.AssemblyInfoInputs.cache
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShopGrpcService\obj\Debug\net6.0\OnlineShopGrpcService.AssemblyInfo.cs
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShopGrpcService\obj\Debug\net6.0\OnlineShopGrpcService.csproj.CoreCompileInputs.cache
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShopGrpcService\obj\Debug\net6.0\OnlineShopGrpcService.MvcApplicationPartsAssemblyInfo.cache

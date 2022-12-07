@@ -8,41 +8,45 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OnlineShop
 build_property.RootNamespace = OnlineShop
-build_property.ProjectDir = D:\3 course\ASP\lab3\OnlineShop\OnlineShop\
+build_property.ProjectDir = D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\3 course\ASP\lab3\OnlineShop\OnlineShop
+build_property.MSBuildProjectDirectory = D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/3 course/ASP/lab3/OnlineShop/OnlineShop/Views/Shared/Error.cshtml]
+[D:/programming/git/AppliedWebService_OnlineShop/OnlineShop/OnlineShop/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3 course/ASP/lab3/OnlineShop/OnlineShop/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/programming/git/AppliedWebService_OnlineShop/OnlineShop/OnlineShop/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3 course/ASP/lab3/OnlineShop/OnlineShop/Views/Shop/Cart.cshtml]
+[D:/programming/git/AppliedWebService_OnlineShop/OnlineShop/OnlineShop/Views/Shop/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3 course/ASP/lab3/OnlineShop/OnlineShop/Views/Shop/Item.cshtml]
+[D:/programming/git/AppliedWebService_OnlineShop/OnlineShop/OnlineShop/Views/Shop/Item.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJdGVtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3 course/ASP/lab3/OnlineShop/OnlineShop/Views/Shop/Table.cshtml]
+[D:/programming/git/AppliedWebService_OnlineShop/OnlineShop/OnlineShop/Views/Shop/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming/git/AppliedWebService_OnlineShop/OnlineShop/OnlineShop/Views/Shop/Table.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3 course/ASP/lab3/OnlineShop/OnlineShop/Views/_ViewImports.cshtml]
+[D:/programming/git/AppliedWebService_OnlineShop/OnlineShop/OnlineShop/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3 course/ASP/lab3/OnlineShop/OnlineShop/Views/_ViewStart.cshtml]
+[D:/programming/git/AppliedWebService_OnlineShop/OnlineShop/OnlineShop/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3 course/ASP/lab3/OnlineShop/OnlineShop/Views/Shared/_Layout.cshtml]
+[D:/programming/git/AppliedWebService_OnlineShop/OnlineShop/OnlineShop/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-62ip2yfgpx
