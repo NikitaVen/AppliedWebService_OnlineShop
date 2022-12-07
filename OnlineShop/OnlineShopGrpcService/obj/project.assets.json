@@ -178,7 +178,7 @@
           }
         }
       },
-      "Grpc.Tools/2.40.0": {
+      "Grpc.Tools/2.51.0": {
         "type": "package",
         "build": {
           "build/Grpc.Tools.props": {},
@@ -1417,10 +1417,10 @@
         "packageIcon.png"
       ]
     },
-    "Grpc.Tools/2.40.0": {
-      "sha512": "yOAhijs6POv7oISBV9Rdx5YCSdo/+6zCJTB/ULum3GA4RunxVFI0rPnpJM1+YM9yMf+H1/D001ignsepnygPJw==",
+    "Grpc.Tools/2.51.0": {
+      "sha512": "dGWgVYiTiwdlQuTK8kqqOkhYVHuOOuq3DVBmkjFwNOYQR9FW9YyEu0TXpxItc7W4xQ4lnahCLuHMNHd4012bnQ==",
       "type": "package",
-      "path": "grpc.tools/2.40.0",
+      "path": "grpc.tools/2.51.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -1449,8 +1449,9 @@
         "build/native/include/google/protobuf/timestamp.proto",
         "build/native/include/google/protobuf/type.proto",
         "build/native/include/google/protobuf/wrappers.proto",
-        "grpc.tools.2.40.0.nupkg.sha512",
+        "grpc.tools.2.51.0.nupkg.sha512",
         "grpc.tools.nuspec",
+        "packageIcon.png",
         "tools/linux_arm64/grpc_csharp_plugin",
         "tools/linux_arm64/protoc",
         "tools/linux_x64/grpc_csharp_plugin",
@@ -3614,6 +3615,7 @@
     "net6.0": [
       "Google.Protobuf >= 3.21.10",
       "Grpc.AspNetCore >= 2.40.0",
+      "Grpc.Tools >= 2.51.0",
       "Microsoft.EntityFrameworkCore >= 7.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.0"
     ]
@@ -3664,6 +3666,12 @@
           "Grpc.AspNetCore": {
             "target": "Package",
             "version": "[2.40.0, )"
+          },
+          "Grpc.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.51.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

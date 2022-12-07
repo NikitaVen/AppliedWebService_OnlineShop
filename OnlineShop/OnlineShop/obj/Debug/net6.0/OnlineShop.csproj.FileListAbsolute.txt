@@ -146,3 +146,10 @@ D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\obj\Debug\
 D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.pdb
 D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.genruntimeconfig.cache
 D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\obj\Debug\net6.0\ref\OnlineShop.dll
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\bin\Debug\net6.0\Google.Protobuf.dll
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\bin\Debug\net6.0\Grpc.AspNetCore.Server.dll
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\bin\Debug\net6.0\Grpc.AspNetCore.Server.ClientFactory.dll
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\bin\Debug\net6.0\Grpc.Core.Api.dll
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\bin\Debug\net6.0\Grpc.Net.Client.dll
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\bin\Debug\net6.0\Grpc.Net.ClientFactory.dll
+D:\programming\git\AppliedWebService_OnlineShop\OnlineShop\OnlineShop\bin\Debug\net6.0\Grpc.Net.Common.dll

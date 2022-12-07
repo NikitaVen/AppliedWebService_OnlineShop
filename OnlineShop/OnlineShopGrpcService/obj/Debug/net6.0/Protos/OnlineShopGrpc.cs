@@ -12,6 +12,63 @@ namespace OnlineShopGrpcService {
   {
     static readonly string __ServiceName = "onlineShop.OnlineShop";
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
+    {
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (message is global::Google.Protobuf.IBufferMessage)
+      {
+        context.SetPayloadLength(message.CalculateSize());
+        global::Google.Protobuf.MessageExtensions.WriteTo(message, context.GetBufferWriter());
+        context.Complete();
+        return;
+      }
+      #endif
+      context.Complete(global::Google.Protobuf.MessageExtensions.ToByteArray(message));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static class __Helper_MessageCache<T>
+    {
+      public static readonly bool IsBufferMessage = global::System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(global::Google.Protobuf.IBufferMessage)).IsAssignableFrom(typeof(T));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static T __Helper_DeserializeMessage<T>(grpc::DeserializationContext context, global::Google.Protobuf.MessageParser<T> parser) where T : global::Google.Protobuf.IMessage<T>
+    {
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (__Helper_MessageCache<T>.IsBufferMessage)
+      {
+        return parser.ParseFrom(context.PayloadAsReadOnlySequence());
+      }
+      #endif
+      return parser.ParseFrom(context.PayloadAsNewBuffer());
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::OnlineShopGrpcService.GetItemsRequest> __Marshaller_onlineShop_GetItemsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::OnlineShopGrpcService.GetItemsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::OnlineShopGrpcService.GetItemsResponse> __Marshaller_onlineShop_GetItemsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::OnlineShopGrpcService.GetItemsResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::OnlineShopGrpcService.CreateOrderRequest> __Marshaller_onlineShop_CreateOrderRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::OnlineShopGrpcService.CreateOrderRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::OnlineShopGrpcService.CreateOrderResponse> __Marshaller_onlineShop_CreateOrderResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::OnlineShopGrpcService.CreateOrderResponse.Parser));
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::OnlineShopGrpcService.GetItemsRequest, global::OnlineShopGrpcService.GetItemsResponse> __Method_GetItems = new grpc::Method<global::OnlineShopGrpcService.GetItemsRequest, global::OnlineShopGrpcService.GetItemsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetItems",
+        __Marshaller_onlineShop_GetItemsRequest,
+        __Marshaller_onlineShop_GetItemsResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::OnlineShopGrpcService.CreateOrderRequest, global::OnlineShopGrpcService.CreateOrderResponse> __Method_CreateOrder = new grpc::Method<global::OnlineShopGrpcService.CreateOrderRequest, global::OnlineShopGrpcService.CreateOrderResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateOrder",
+        __Marshaller_onlineShop_CreateOrderRequest,
+        __Marshaller_onlineShop_CreateOrderResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -23,6 +80,18 @@ namespace OnlineShopGrpcService {
     [grpc::BindServiceMethod(typeof(OnlineShop), "BindService")]
     public abstract partial class OnlineShopBase
     {
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::OnlineShopGrpcService.GetItemsResponse> GetItems(global::OnlineShopGrpcService.GetItemsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::OnlineShopGrpcService.CreateOrderResponse> CreateOrder(global::OnlineShopGrpcService.CreateOrderRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -30,7 +99,9 @@ namespace OnlineShopGrpcService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static grpc::ServerServiceDefinition BindService(OnlineShopBase serviceImpl)
     {
-      return grpc::ServerServiceDefinition.CreateBuilder().Build();
+      return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_GetItems, serviceImpl.GetItems)
+          .AddMethod(__Method_CreateOrder, serviceImpl.CreateOrder).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -40,6 +111,8 @@ namespace OnlineShopGrpcService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, OnlineShopBase serviceImpl)
     {
+      serviceBinder.AddMethod(__Method_GetItems, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::OnlineShopGrpcService.GetItemsRequest, global::OnlineShopGrpcService.GetItemsResponse>(serviceImpl.GetItems));
+      serviceBinder.AddMethod(__Method_CreateOrder, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::OnlineShopGrpcService.CreateOrderRequest, global::OnlineShopGrpcService.CreateOrderResponse>(serviceImpl.CreateOrder));
     }
 
   }
