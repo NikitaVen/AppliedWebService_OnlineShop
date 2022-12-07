@@ -1,4 +1,12 @@
 ﻿@model Cart
+@{
+    ViewData["Title"] = "Cart";
+}
+
+@if (TempData["WrongAmountOfItem"] != null)
+{
+ <p class="alert alert-danger" id="successMessage">@TempData["WrongAmountOfItem"]</p>
+}
 
 <form class="left-column-cart" method="get" asp-action="Order">
     @{

@@ -10,10 +10,10 @@ namespace OnlineShop.Controllers
     public class ShopController : Controller
     {
         ShopContext context;
-       // IHttpContextAccessor accessor;
-      //  Basket basket;
+        // IHttpContextAccessor accessor;
+        //  Basket basket;
 
-        public ShopController(ShopContext context)//, IHttpContextAccessor accessor)//, Basket basket)
+        public ShopController(ShopContext context) //, IHttpContextAccessor accessor)//, Basket basket)
         {
             this.context = context;
             //this.accessor = accessor;
@@ -30,7 +30,7 @@ namespace OnlineShop.Controllers
         {
             string value;
             HttpContext.Request.Cookies.TryGetValue("Cart", out value);
-          //  var value = HttpContext.Session.GetString("Cart");
+            //  var value = HttpContext.Session.GetString("Cart");
             Basket basket;
             if (value == null)
                 basket = new Basket();
@@ -39,7 +39,7 @@ namespace OnlineShop.Controllers
 
             BasketAction(basket, button);
             HttpContext.Response.Cookies.Append("Cart", JsonSerializer.Serialize<Basket>(basket));
-          //  HttpContext.Session.SetString("Cart", JsonSerializer.Serialize<Basket>(basket));
+            //  HttpContext.Session.SetString("Cart", JsonSerializer.Serialize<Basket>(basket));
             return RedirectToAction("Table");
         }
 
@@ -59,7 +59,7 @@ namespace OnlineShop.Controllers
         [HttpGet]
         public IActionResult Item(long itemId)
         {
-            return View(context.Items.First(i=>i.Id == itemId));
+            return View(context.Items.First(i => i.Id == itemId));
         }
 
         [HttpGet]
@@ -75,7 +75,7 @@ namespace OnlineShop.Controllers
 
             Cart cart = new Cart();
 
-            foreach(var id in basket.items.Keys)
+            foreach (var id in basket.items.Keys)
             {
                 Item item = context.Items.First(i => i.Id == id);
                 cart.items.Add(item, basket.items[id]);
@@ -149,29 +149,42 @@ namespace OnlineShop.Controllers
             Basket basket;
             if (value == null)
             {
-                return RedirectToAction("Cart");   
+                return RedirectToAction("Cart");
             }
 
             basket = JsonSerializer.Deserialize<Basket>(value);
-            
+
             Console.WriteLine(order.Id);
             order.OrderItems = new List<OrderItem>();
             decimal totalPrice = 0;
-            foreach(KeyValuePair<long, int> entry in basket.items)
+            foreach (KeyValuePair<long, int> entry in basket.items)
             {
                 OrderItem oi = new OrderItem();
                 oi.Item = context.Items.First(i => i.Id == entry.Key);
+                if (oi.Item.Amount < entry.Value)
+                {
+                    TempData["WrongAmountOfItem"] =
+                        $"В наличии нет требуемого количества товара \"{oi.Item.Item_Code.Title} {oi.Item.Manufacturer.Title} {oi.Item.Title}\"." +
+                        " Его количество в Вашей корзине задано максимально возможным. Приносим свои извинения!";
+                    basket.items[entry.Key] = (int)oi.Item.Amount;
+                    HttpContext.Response.Cookies.Append("Cart", JsonSerializer.Serialize<Basket>(basket));
+                    
+                    return RedirectToAction("Cart");
+                }
+
                 oi.Order = order;
                 oi.Amount = entry.Value;
                 totalPrice += oi.Item.Price * oi.Amount;
                 order.OrderItems.Add(oi);
             }
+
             order.Order_date = DateTime.Now;
             order.TotalPrice = totalPrice;
             context.Orders.Add(order);
             await context.SaveChangesAsync();
             HttpContext.Response.Cookies.Delete("Cart");
-            TempData["Success"] = "Новый заказ успешно создан. После обработки заказа, подтверждение и дальнейшие действия будут высланы на Ваш почтовый ящик. Спасибо!";
+            TempData["Success"] =
+                "Новый заказ успешно создан. После обработки заказа, подтверждение и дальнейшие действия будут высланы на Ваш почтовый ящик. Спасибо!";
             return RedirectToAction("Table");
         }
     }

@@ -1,4 +1,7 @@
 ﻿@model Order
+@{
+    ViewData["Title"] = "Order creation";
+}
 
 @using (@Html.BeginForm("CreateOrder", "Shop", FormMethod.Post))
 {
