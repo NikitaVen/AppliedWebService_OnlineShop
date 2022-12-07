@@ -1,6 +1,6 @@
 ﻿@model Cart
 
-<form class="left-column-cart" method="post" asp-action="GoToOrderCreation">
+<form class="left-column-cart" method="get" asp-action="Order">
     @{
         decimal total_price = 0;
         foreach (var item in @Model.items.Keys)

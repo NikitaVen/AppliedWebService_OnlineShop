@@ -134,12 +134,6 @@ namespace OnlineShop.Controllers
             HttpContext.Response.Cookies.Append("Cart", JsonSerializer.Serialize<Basket>(basket));
             return RedirectToAction("Cart");
         }
-        
-        [HttpPost]
-        public IActionResult GoToOrderCreation()
-        {
-            return RedirectToAction("Order"); 
-        }
 
         [HttpGet]
         public IActionResult Order()
