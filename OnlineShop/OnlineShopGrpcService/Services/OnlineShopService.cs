@@ -17,7 +17,7 @@ public class OnlineShopService : OnlineShop.OnlineShopBase
 
     public override async Task<GetItemsResponse> GetItems(GetItemsRequest request, ServerCallContext context)
     {
-        if (request.ItemIds == null)
+        if (request.ItemIds.Count == 0)
         {
             return await Task.FromResult(new GetItemsResponse
             {

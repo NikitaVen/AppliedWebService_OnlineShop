@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "OnlineShopGrpcService";
+option csharp_namespace = "OnlineShop";
 
 package onlineShop;
 
