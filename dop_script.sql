@@ -1,2 +1,5 @@
 ﻿ALTER Table Ord
-ADD Total_Price MONEY NOT NULL;
+ADD Total_Price MONEY;
+
+ALTER Table Ord
+ALTER COLUMN Total_Price MONEY NOT NULL;

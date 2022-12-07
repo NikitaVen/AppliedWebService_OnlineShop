@@ -162,17 +162,22 @@ namespace OnlineShop.Controllers
             
             Console.WriteLine(order.Id);
             order.OrderItems = new List<OrderItem>();
+            decimal totalPrice = 0;
             foreach(KeyValuePair<long, int> entry in basket.items)
             {
                 OrderItem oi = new OrderItem();
                 oi.Item = context.Items.First(i => i.Id == entry.Key);
                 oi.Order = order;
                 oi.Amount = entry.Value;
+                totalPrice += oi.Item.Price * oi.Amount;
                 order.OrderItems.Add(oi);
             }
             order.Order_date = DateTime.Now;
+            order.TotalPrice = totalPrice;
             context.Orders.Add(order);
             await context.SaveChangesAsync();
+            HttpContext.Response.Cookies.Delete("Cart");
+            TempData["Success"] = "Новый заказ успешно создан. После обработки заказа, подтверждение и дальнейшие действия будут высланы на Ваш почтовый ящик. Спасибо!";
             return RedirectToAction("Table");
         }
     }

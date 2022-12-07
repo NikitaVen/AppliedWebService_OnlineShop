@@ -12,5 +12,8 @@ public class Order
     [EmailAddress]
     public string Email { get; set; }
     public string Address { get; set; }
+    
+    [Column("Total_Price")]
+    public decimal TotalPrice { get; set; }
     public ICollection<OrderItem> OrderItems { get; set; }
 }
