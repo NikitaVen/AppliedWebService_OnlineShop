@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Protobuf Include="Protos\onlineShop.proto" GrpcServices="Client" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.21.10" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.50.0" />
     <PackageReference Include="Grpc.Net.Client" Version="2.50.0" />

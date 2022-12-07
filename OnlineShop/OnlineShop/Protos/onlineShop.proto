@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "OnlineShop";
+
+package onlineShop;
+
+service OnlineShop {
+  rpc GetItems (GetItemsRequest) returns (GetItemsResponse);
+  rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse);
+}
+
+message GetItemsRequest{
+  repeated int64 itemIds = 1;
+}
+
+message GetItemsResponse{
+  string items = 1;
+}
+
+message CreateOrderRequest{
+  string basket = 1;
+  string email = 2;
+  string address = 3;
+}
+
+message CreateOrderResponse{
+  bool success = 1;
+  string problemItem = 2;
+  int64 maxAmount = 3;
+}

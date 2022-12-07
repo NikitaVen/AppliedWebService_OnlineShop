@@ -25,7 +25,7 @@ namespace OnlineShopGrpcService {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdQcm90b3Mvb25saW5lU2hvcC5wcm90bxIKb25saW5lU2hvcCIiCg9HZXRJ",
-            "dGVtc1JlcXVlc3QSDwoHaXRlbUlkcxgBIAMoBSIhChBHZXRJdGVtc1Jlc3Bv",
+            "dGVtc1JlcXVlc3QSDwoHaXRlbUlkcxgBIAMoAyIhChBHZXRJdGVtc1Jlc3Bv",
             "bnNlEg0KBWl0ZW1zGAEgASgJIkQKEkNyZWF0ZU9yZGVyUmVxdWVzdBIOCgZi",
             "YXNrZXQYASABKAkSDQoFZW1haWwYAiABKAkSDwoHYWRkcmVzcxgDIAEoCSJO",
             "ChNDcmVhdGVPcmRlclJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSEwoLcHJv",
@@ -94,12 +94,12 @@ namespace OnlineShopGrpcService {
 
     /// <summary>Field number for the "itemIds" field.</summary>
     public const int ItemIdsFieldNumber = 1;
-    private static readonly pb::FieldCodec<int> _repeated_itemIds_codec
-        = pb::FieldCodec.ForInt32(10);
-    private readonly pbc::RepeatedField<int> itemIds_ = new pbc::RepeatedField<int>();
+    private static readonly pb::FieldCodec<long> _repeated_itemIds_codec
+        = pb::FieldCodec.ForInt64(10);
+    private readonly pbc::RepeatedField<long> itemIds_ = new pbc::RepeatedField<long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<int> ItemIds {
+    public pbc::RepeatedField<long> ItemIds {
       get { return itemIds_; }
     }
 

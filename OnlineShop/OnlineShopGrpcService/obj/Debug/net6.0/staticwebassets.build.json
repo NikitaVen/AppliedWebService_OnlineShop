@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "9hefs2rLQ2KX98mrMsDl/Zu96TnSNge4jjVOqnfWeIQ=",
+  "Source": "OnlineShopGrpcService",
+  "BasePath": "_content/OnlineShopGrpcService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
