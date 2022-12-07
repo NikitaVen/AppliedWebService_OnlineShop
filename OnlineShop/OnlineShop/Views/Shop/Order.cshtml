@@ -3,12 +3,13 @@
     ViewData["Title"] = "Order creation";
 }
 
-@using (@Html.BeginForm("CreateOrder", "Shop", FormMethod.Post))
+@using (@Html.BeginForm("Order", "Shop", FormMethod.Post))
 {
     @Html.LabelFor(order => order.Address)
     <p>@Html.TextBoxFor(order => order.Address, new {style="width: 200px;"})</p>
 
     @Html.LabelFor(order => order.Email)
+    @Html.ValidationMessageFor(order => order.Email)
     <p>@Html.TextBoxFor(order => order.Email, new {style="width: 200px;"})</p>
     <button type="submit" class="basket-button">Сформировать заказ</button>
 }

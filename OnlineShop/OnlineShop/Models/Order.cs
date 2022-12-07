@@ -9,7 +9,9 @@ public class Order
 {
     public long Id { get; set; }
     public DateTime Order_date { get; set; }
-    [EmailAddress]
+    
+    [Required(ErrorMessage = "Поле не может быть пустым")]
+    [EmailAddress(ErrorMessage = "Неверный формат")]
     public string Email { get; set; }
     public string Address { get; set; }
     

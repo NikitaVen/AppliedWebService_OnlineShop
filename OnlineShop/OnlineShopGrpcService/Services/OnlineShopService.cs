@@ -1,11 +1,16 @@
-﻿namespace OnlineShopGrpcService.Services;
+﻿using OnlineShopGrpcService.Models;
+
+namespace OnlineShopGrpcService.Services;
 
 using Grpc.Core;
 using OnlineShopGrpcService;
 
-public class OnlineShopService
+public class OnlineShopService : OnlineShop.OnlineShopBase
 {
-    
+    public OnlineShopService(ShopContext options)
+    {
+        context
+    }
 }
 
 // public class GreeterService : Greeter.GreeterBase

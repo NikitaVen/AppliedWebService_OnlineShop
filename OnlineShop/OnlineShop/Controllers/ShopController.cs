@@ -142,7 +142,7 @@ namespace OnlineShop.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateOrder(Order order)
+        public async Task<IActionResult> Order(Order order)
         {
             string value;
             HttpContext.Request.Cookies.TryGetValue("Cart", out value);
@@ -153,8 +153,7 @@ namespace OnlineShop.Controllers
             }
 
             basket = JsonSerializer.Deserialize<Basket>(value);
-
-            Console.WriteLine(order.Id);
+            
             order.OrderItems = new List<OrderItem>();
             decimal totalPrice = 0;
             foreach (KeyValuePair<long, int> entry in basket.items)
