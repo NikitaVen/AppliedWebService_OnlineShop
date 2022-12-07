@@ -5,8 +5,6 @@
     ViewData["Title"] = $"{Model.Manufacturer.Title} {Model.Title}";
 }
 <main class="container">
- 
-  <!-- Left Column / Headphones Image -->
   <div class="left-column">
     @{
         var base64 = Convert.ToBase64String(@Model.Image);
@@ -30,7 +28,13 @@
     <div class="product-price">
       <span>Цена: @string.Format("{0:f2}", @Model.Price)</span>
     </div>
-     <button  name="button" class="basket-button" value="@Model.Id" asp-action="CartAdd">Добавить в корзину</button>
+         @if (Model.Amount != 0)
+                    {
+                            <button name="button" class="basket-button" value="@Model.Id" asp-action="CartAdd">Добавить в корзину</button>
+                    } else
+                    {
+                             <span style="font-size: 40px">Нет в наличии</span>
+                    }
   </div>
 </main>
 </form>

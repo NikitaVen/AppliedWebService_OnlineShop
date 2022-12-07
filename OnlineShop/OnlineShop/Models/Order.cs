@@ -15,6 +15,7 @@ public class Order
     public string Email { get; set; }
 
    [Required(ErrorMessage = "Поле Address обязательно")]
+  //  [DataType(DataType.Text)]
     public string Address { get; set; }
     
     [Column("Total_Price")]

@@ -6,11 +6,11 @@
 @using (@Html.BeginForm("Order", "Shop", FormMethod.Post))
 {
     @Html.LabelFor(order => order.Address)
+    @Html.ValidationMessageFor(order => order.Address)
     <p>@Html.TextBoxFor(order => order.Address, new {style="width: 200px;"})</p>
-    <span asp-validation-for="Address" />
     @Html.LabelFor(order => order.Email)
+    @Html.ValidationMessageFor(order => order.Email)
     <p>@Html.TextBoxFor(order => order.Email, new {style="width: 200px;"})</p>
-    <span asp-validation-for="Email" />
     <button type="submit" class="basket-button">Сформировать заказ</button>
 }
 

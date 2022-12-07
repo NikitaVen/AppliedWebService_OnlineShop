@@ -1,4 +1,4 @@
-﻿namespace OnlineShop.Models
+namespace OnlineShopGrpcService.Models
 {
     public class ErrorViewModel
     {
